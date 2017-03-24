@@ -1,4 +1,6 @@
 # text-dots, A Dependency Free Loading Dots Utility
+[ [text-dots on npm](https://www.npmjs.com/package/text-dots "npm") ]
+
 The "text-dots" utility allows you to add loading dots (...) that appear at an interval to any DOM element.
 
 ### HTML
