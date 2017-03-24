@@ -46,6 +46,6 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
-pause-me.sublime-project
-pause-me.sublime-workspace
+*.sublime-project
+*.sublime-workspace
 tests
