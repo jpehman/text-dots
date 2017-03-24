@@ -2,7 +2,7 @@
   "name": "text-dots",
   "version": "1.0.0",
   "description": "A dependency free loading dots utility",
-  "main": "text-dots.js",
+  "main": "./src/text-dots.js",
   "directories": {
     "test": "tests"
   },
@@ -19,7 +19,7 @@
     "ellipsis",
     "utility"
   ],
-  "author": "Jonathan Ehman",
+  "author": "Jonathan Ehman <jpehman@gmail.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/jpehman/text-dots/issues"
