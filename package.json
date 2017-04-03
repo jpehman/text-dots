@@ -1,6 +1,6 @@
 {
   "name": "text-dots",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "A dependency free loading dots utility",
   "main": "./src/text-dots.js",
   "directories": {
