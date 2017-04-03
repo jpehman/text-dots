@@ -8,7 +8,12 @@
  * 
  * const dots = textDots(5);
  * @param {number} numberOfDots - optional - three dots is the default, 0 is pointless and will result in 3 dots
- * 
+ * @param {object} configObj - optional - allows the dots to start without having to call the start method
+ * {
+ *   "element": {DOMElement} - required to run textDots without calling start
+ *   "text": {string} - optional - defaults to an empty string
+ *   "interval": {number} - optional - defaults to 500ms
+ * }
  * dots.start(context, "Loading Text", interval);
  * @param {DOMElement} context - required on first run - Passing something other than an HTMLElement will throw a TypeError
  * @param {string} text - optional - dots will be displayed even without a proper string
@@ -17,7 +22,7 @@
  * dots.stop();
  *
  */
-var textDots = function (numberOfDots) {
+var textDots = function (numberOfDots, configObj) {
     "use strict";
 
     if (typeof numberOfDots !== "undefined" && isNaN(numberOfDots)) {
@@ -27,7 +32,7 @@ var textDots = function (numberOfDots) {
     numberOfDots = (typeof numberOfDots === "string" ? parseInt(numberOfDots, 10) : numberOfDots) || 3;
 
     var dotsInterval = null,
-        element = null,
+        element = typeof configObj === "object" ? configObj.element : null,
         dot = ".",
         nbsp = "&nbsp;",
 
@@ -84,10 +89,16 @@ var textDots = function (numberOfDots) {
         set(mainText);
     };
 
+    if (element !== null) {
+        start(element, configObj.text, configObj.interval || null);
+    }
+
     return {
         "start": start,
         "stop": stop
     };
 };
 
-module.exports = textDots;
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = textDots;
+}
