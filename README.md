@@ -10,13 +10,16 @@ The "text-dots" utility allows you to add loading dots (...) that appear at an s
 ## Usage
 
 ### HTML
+```html
 	  <div class="blinder">
 		<div class="loading-parent">
 		  <span id="loadingText"></span>  
 		</div>
 	  </div>
+```
 
 ### JavaScript
+```javascript
 	  const textDots = require("text-dots");
 	  // the number of dots is optional - the default is three (...)
 	  const dots = textDots(5);
@@ -27,10 +30,12 @@ The "text-dots" utility allows you to add loading dots (...) that appear at an s
 
 	  // call stop when you want the ..... to stop
 	  dots.stop();
+```
 
 ### Config Object
 Starting in 1.1.0, you can also use a configuration object as the second parameter on the initial call to `textDots()`, so that you won't need to explicitly call `start()`
 
+```javascript
 	  // start method is called inside of the textDots function
 	  const dots = textDots(7, {
 		"element": document.getElementById("loadingText"),  
@@ -40,7 +45,7 @@ Starting in 1.1.0, you can also use a configuration object as the second paramet
 
 	  // call stop as usual
 	  dots.stop();
-	  
+```
 
 ### CodePen Example
 
